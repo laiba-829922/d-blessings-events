@@ -20,13 +20,16 @@ export type EventGallery = {
   designs: GalleryDesign[];
 };
 
-const pexels = (id: number) =>
+const pexels = (id: number): string =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1200`;
 
-const unsplash = (id: string) =>
+const unsplash = (id: string): string =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=85`;
 
-// INSPIRATION CATEGORY COVERS
+// ======================================
+// INSPIRATION CATEGORY COVER IMAGES
+// ======================================
+
 export const inspirations: Inspiration[] = [
   {
     id: 1,
@@ -47,7 +50,7 @@ export const inspirations: Inspiration[] = [
     title: "Mehndi & Dholki",
     category: "Mehndi",
     slug: "mehndi",
-    image: unsplash("photo-1511795409834-ef04bbd61622"),
+    image: unsplash("photo-1519167758481-83f29c4277d8"),
   },
   {
     id: 4,
@@ -86,14 +89,21 @@ export const inspirations: Inspiration[] = [
   },
 ];
 
+// ======================================
 // EVENT DESIGN GALLERIES
-// These are stock references, NOT D Blessings portfolio images.
+// ======================================
+
 export const eventGalleries: Record<string, EventGallery> = {
+
+  // ====================================
+  // WEDDING & NIKAH
+  // ====================================
+
   wedding: {
     title: "Wedding & Nikah",
     eventType: "Wedding & Nikah",
     description:
-      "Luxury floral stages, ivory seating, elegant arches and beautiful Nikah-friendly decoration ideas.",
+      "Explore luxurious wedding stages, romantic floral arches, elegant Nikah settings and modern wedding decoration inspiration.",
     designs: [
       {
         id: "wed-01",
@@ -102,66 +112,70 @@ export const eventGalleries: Record<string, EventGallery> = {
       },
       {
         id: "wed-02",
-        title: "Ivory Garden Wedding Stage",
+        title: "Ivory Garden Wedding",
         image: pexels(33485954),
       },
       {
         id: "wed-03",
-        title: "Night Floral Wedding Stage",
+        title: "Luxury Evening Wedding Stage",
         image: pexels(33469001),
       },
       {
         id: "wed-04",
-        title: "Red Rose & Gold Ceremony",
+        title: "Royal Red & Gold Ceremony",
         image: pexels(27940585),
       },
       {
         id: "wed-05",
-        title: "Modern Green Floral Stage",
+        title: "Modern Floral Stage",
         image: pexels(36669332),
       },
       {
         id: "wed-06",
-        title: "Outdoor Floral Ceremony",
+        title: "Outdoor Floral Wedding",
         image: pexels(34303528),
       },
       {
         id: "wed-07",
-        title: "Elegant Garden Wedding Arch",
+        title: "Garden Wedding Arch",
         image: pexels(32799679),
       },
       {
         id: "wed-08",
-        title: "Romantic Floral Ceremony",
+        title: "Romantic Wedding Ceremony",
         image: pexels(31217382),
       },
     ],
   },
 
+  // ====================================
+  // BIRTHDAY CELEBRATION
+  // ====================================
+
   birthday: {
     title: "Birthday Celebration",
     eventType: "Birthday Celebration",
     description:
-      "Beautiful birthday balloon arches, milestone backdrops, kids' themes and stylish party decorations.",
+      "Discover beautiful birthday decorations, themed balloon arches, pastel backdrops and stylish kids and adult birthday concepts.",
     designs: [
       {
         id: "birth-01",
-        title: "Cartoon Balloon Birthday Backdrop",
+        title: "Cartoon Birthday Decoration",
         image: pexels(32274224),
       },
       {
         id: "birth-02",
-        title: "Royal Blue Birthday Decoration",
+        title: "Royal Blue Birthday Setup",
         image: pexels(37296139),
       },
       {
         id: "birth-03",
-        title: "Modern Milestone Birthday Setup",
+        title: "Elegant Milestone Birthday",
         image: pexels(37296135),
       },
       {
         id: "birth-04",
-        title: "Pastel Birthday Balloons",
+        title: "Pastel Balloon Birthday",
         image: pexels(7548036),
       },
       {
@@ -176,114 +190,131 @@ export const eventGalleries: Record<string, EventGallery> = {
       },
       {
         id: "birth-07",
-        title: "Kids' Themed Celebration",
+        title: "Kids Theme Celebration",
         image: pexels(7328585),
       },
       {
         id: "birth-08",
-        title: "Elegant Balloon Birthday",
+        title: "Elegant Balloon Decoration",
         image: pexels(22690730),
       },
     ],
   },
 
+  // ====================================
+  // MEHNDI & DHOLKI
+  // ====================================
+
   mehndi: {
     title: "Mehndi & Dholki",
     eventType: "Mehndi & Dholki",
     description:
-      "Pakistani-inspired colorful floral stages, traditional seating, festive lights and bright Dholki decoration ideas.",
+      "Explore festive Pakistani-inspired Dholki concepts featuring colorful flowers, decorative lighting, traditional seating and vibrant celebration backdrops.",
     designs: [
       {
         id: "meh-01",
-        title: "Bright Floral Mehndi Stage",
-        image: pexels(31002035),
+        title: "Festive Celebration Lighting",
+        image: unsplash("photo-1517457373958-b7bdd4587205"),
       },
       {
         id: "meh-02",
-        title: "Festive Floral Backdrop",
-        image: pexels(31750735),
+        title: "Colorful Party Decoration",
+        image: unsplash("photo-1464366400600-7168b8af9bc3"),
       },
       {
         id: "meh-03",
-        title: "Colorful Flower Stage",
-        image: pexels(35327990),
+        title: "Golden Celebration Ambience",
+        image: unsplash("photo-1511795409834-ef04bbd61622"),
       },
       {
         id: "meh-04",
-        title: "Warm Festive Lighting",
+        title: "Outdoor Celebration Lighting",
         image: unsplash("photo-1519671482749-fd09be7ccebf"),
       },
       {
         id: "meh-05",
-        title: "Traditional Dholki Floral Setup",
-        image: pexels(35328207),
+        title: "Festive Floral Styling",
+        image: unsplash("photo-1490750967868-88aa4486c946"),
       },
     ],
   },
+
+  // ====================================
+  // ENGAGEMENT DECORATIONS
+  // ====================================
 
   engagement: {
     title: "Engagement",
     eventType: "Engagement",
     description:
-      "Romantic engagement decorations featuring elegant floral arrangements, beautiful backdrops and intimate celebration settings.",
+      "Discover romantic engagement decorations, elegant floral backdrops, engagement party seating and sophisticated celebration concepts.",
     designs: [
       {
         id: "eng-01",
-        title: "Soft Floral Engagement Setup",
-        image: pexels(32147292),
+        title: "Luxury Engagement Floral Setup",
+        image: pexels(26623743),
       },
       {
         id: "eng-02",
-        title: "Romantic Proposal Decoration",
-        image: pexels(16854641),
+        title: "Romantic Engagement Rose Decor",
+        image: pexels(26623750),
       },
       {
         id: "eng-03",
-        title: "Engagement Balloon Backdrop",
+        title: "Engagement Balloon Celebration",
         image: pexels(37169825),
       },
       {
         id: "eng-04",
-        title: "Romantic Roses & Balloons",
-        image: pexels(37169832),
+        title: "Romantic Engagement Balloons",
+        image: pexels(37169834),
       },
       {
         id: "eng-05",
-        title: "Engagement Floral Arrangement",
-        image: pexels(32147262),
+        title: "Elegant Floral Engagement",
+        image: pexels(32147292),
       },
       {
         id: "eng-06",
-        title: "Elegant Floral Engagement Arch",
-        image: pexels(13045718),
+        title: "Romantic Proposal Setting",
+        image: pexels(16854641),
+      },
+      {
+        id: "eng-07",
+        title: "Just Engaged Cake Styling",
+        image: pexels(24987502),
       },
     ],
   },
+
+  // ====================================
+  // BABY SHOWER
+  // ====================================
 
   "baby-shower": {
     title: "Baby Shower",
     eventType: "Baby Shower",
     description:
-      "Adorable teddy-bear decorations, baby blocks, pastel balloon arches and sweet baby shower backdrops.",
+      "Explore teddy bear themes, pastel balloon setups, adorable baby blocks and beautifully styled baby shower celebrations.",
     designs: [
       {
         id: "baby-01",
-        title: "Teddy Bear & Welcome Sign",
+        title: "Teddy Bear Baby Shower",
         image: pexels(37385725),
       },
       {
         id: "baby-02",
-        title: "Neutral Teddy Baby Shower",
+        title: "Neutral Beige Baby Shower",
         image: pexels(12114820),
       },
       {
         id: "baby-03",
-        title: "Pastel Baby Shower Treats",
+        title: "Baby Shower Dessert Corner",
         image: pexels(12114825),
       },
       {
         id: "baby-04",
-        title: "Outdoor Teddy Baby Shower",
+        title: "Outdoor Teddy Bear Theme",
         image: pexels(32119348),
       },
       {
@@ -309,55 +340,63 @@ export const eventGalleries: Record<string, EventGallery> = {
     ],
   },
 
+  // ====================================
+  // PRIVATE CELEBRATIONS
+  // ====================================
+
   private: {
     title: "Private Celebration",
     eventType: "Private Celebration",
     description:
-      "Romantic anniversary settings, elegant candlelight dinners, luxury floral tables and intimate celebration decorations.",
+      "Explore anniversary surprises, romantic candlelight dinners, luxury table arrangements and beautiful intimate celebrations.",
     designs: [
       {
         id: "priv-01",
-        title: "Romantic Candle & Flower Dinner",
+        title: "Romantic Floral Dinner",
         image: pexels(29110845),
       },
       {
         id: "priv-02",
-        title: "Intimate Candlelight Table",
+        title: "Elegant Candlelight Dinner",
         image: pexels(10810990),
       },
       {
         id: "priv-03",
-        title: "Elegant Red Dinner Styling",
+        title: "Luxury Red Dinner Decoration",
         image: pexels(34546068),
       },
       {
         id: "priv-04",
-        title: "Luxury Candlelit Table",
+        title: "Private Candlelit Celebration",
         image: pexels(10391142),
       },
       {
         id: "priv-05",
-        title: "Flowers & Candles Centerpiece",
+        title: "Romantic Floral Centerpiece",
         image: pexels(18938784),
       },
       {
         id: "priv-06",
-        title: "Rose & Candle Anniversary Decor",
+        title: "Rose & Candle Anniversary",
         image: pexels(16935903),
       },
       {
         id: "priv-07",
-        title: "Romantic Private Evening",
+        title: "Elegant Romantic Evening",
         image: pexels(14452883),
       },
     ],
   },
 
+  // ====================================
+  // CORPORATE EVENTS
+  // ====================================
+
   corporate: {
     title: "Corporate Event",
     eventType: "Corporate Event",
     description:
-      "Modern corporate stages, professional conferences, premium launch events and elegant business celebration setups.",
+      "Discover sophisticated business event styling, modern conference spaces, elegant stages and premium corporate gatherings.",
     designs: [
       {
         id: "corp-01",
@@ -366,63 +405,70 @@ export const eventGalleries: Record<string, EventGallery> = {
       },
       {
         id: "corp-02",
-        title: "Corporate Presentation Stage",
+        title: "Modern Corporate Stage",
         image: unsplash("photo-1540575467063-178a50c2df87"),
       },
       {
         id: "corp-03",
-        title: "Modern Corporate Gala",
+        title: "Premium Corporate Gala",
         image: pexels(35042459),
       },
       {
         id: "corp-04",
-        title: "Premium Business Event Seating",
+        title: "Luxury Business Event",
         image: unsplash("photo-1492684223066-81342ee5ff30"),
       },
       {
         id: "corp-05",
-        title: "Professional Conference Gathering",
-        image: unsplash("photo-1517457373958-b7bdd4587205"),
+        title: "Corporate Networking Event",
+        image: unsplash("photo-1515169067868-5387ec356754"),
       },
     ],
   },
+
+  // ====================================
+  // CUSTOM EVENTS
+  // ====================================
 
   custom: {
     title: "Custom Event",
     eventType: "Custom Event",
     description:
-      "Creative international decoration concepts, beautiful floral arrangements and modern event styling ideas.",
+      "Browse creative contemporary decoration ideas and design a personalized celebration around your vision.",
     designs: [
       {
         id: "cust-01",
-        title: "Pastel Floral Styling",
-        image: unsplash("photo-1490750967868-88aa4486c946"),
+        title: "Modern Floral Concept",
+        image: pexels(32799680),
       },
       {
         id: "cust-02",
-        title: "Premium Evening Celebration",
-        image: unsplash("photo-1470229722913-7c0e2dbbafd3"),
-      },
-      {
-        id: "cust-03",
-        title: "Modern Celebration Backdrop",
+        title: "Creative Balloon Decoration",
         image: pexels(6571690),
       },
       {
-        id: "cust-04",
-        title: "Chic Banquet Decoration",
+        id: "cust-03",
+        title: "Elegant Banquet Decoration",
         image: pexels(4639498),
       },
       {
-        id: "cust-05",
-        title: "Romantic Floral Decoration",
+        id: "cust-04",
+        title: "Luxury Floral Styling",
         image: pexels(15229680),
+      },
+      {
+        id: "cust-05",
+        title: "Garden Event Inspiration",
+        image: unsplash("photo-1465495976277-4387d4b0e4a6"),
       },
     ],
   },
 };
 
+// ======================================
 // EVENT NAME TO GALLERY SLUG
+// ======================================
+
 export const eventSlugByName: Record<string, string> = {
   "Wedding & Nikah": "wedding",
   "Birthday Celebration": "birthday",
@@ -434,7 +480,10 @@ export const eventSlugByName: Record<string, string> = {
   "Custom Event": "custom",
 };
 
-// FIND SELECTED DESIGN FOR CUSTOMIZATION
+// ======================================
+// FIND SELECTED GALLERY DESIGN
+// ======================================
+
 export function findGalleryDesign(id: string) {
   for (const [slug, gallery] of Object.entries(eventGalleries)) {
     const design = gallery.designs.find(
@@ -453,33 +502,37 @@ export function findGalleryDesign(id: string) {
   return null;
 }
 
-// CHECK FOR DUPLICATE IMAGE URLS DURING DEVELOPMENT
+// ======================================
+// DUPLICATE IMAGE URL CHECK
+// ======================================
+
 if (process.env.NODE_ENV !== "production") {
   const seen = new Map<string, string>();
 
-  const items = [
+  const allPhotos = [
     ...inspirations.map((item) => ({
       key: `cover/${item.slug}`,
-      image: item.image,
+      url: item.image,
     })),
+
     ...Object.entries(eventGalleries).flatMap(
       ([slug, gallery]) =>
         gallery.designs.map((item) => ({
           key: `${slug}/${item.id}`,
-          image: item.image,
+          url: item.image,
         }))
     ),
   ];
 
-  for (const item of items) {
-    const existing = seen.get(item.image);
+  for (const photo of allPhotos) {
+    const previous = seen.get(photo.url);
 
-    if (existing) {
+    if (previous) {
       console.warn(
-        `Duplicate decoration image: ${existing} and ${item.key}`
+        `Duplicate image found: ${previous} and ${photo.key}`
       );
     } else {
-      seen.set(item.image, item.key);
+      seen.set(photo.url, photo.key);
     }
   }
 }
