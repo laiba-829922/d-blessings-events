@@ -137,7 +137,7 @@ export default function SiteFooter() {
               </a>
 
               <a
-                href="tel:+923024180914"
+                href="tel:+923012345678"
                 aria-label="Call D Blessings"
                 className="flex h-11 w-11 items-center justify-center border border-white/20 text-white/75 transition hover:border-[#D8BC91] hover:bg-[#D8BC91] hover:text-[#1D2522]"
               >
@@ -213,7 +213,7 @@ export default function SiteFooter() {
                   </p>
 
                   <p className="font-serif text-xl text-white">
-                    Daniel
+                    D Event Planner
                   </p>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function SiteFooter() {
                     href="tel:+923024180914"
                     className="text-sm font-medium text-white/85 transition hover:text-[#D8BC91]"
                   >
-                    +92 302 4180914
+                    +92 302 1234567
                   </a>
                 </div>
               </div>
